@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H1824" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Address" representedClassName="Address" syncable="YES" codeGenerationType="class">
+        <attribute name="appartment" optional="YES" attributeType="String"/>
+        <attribute name="city" optional="YES" attributeType="String"/>
+        <attribute name="street" optional="YES" attributeType="String"/>
+        <relationship name="contact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="address" inverseEntity="Contact"/>
+        <relationship name="job" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Job" inverseName="address" inverseEntity="Job"/>
+    </entity>
+    <entity name="Contact" representedClassName="Contact" syncable="YES" codeGenerationType="class">
+        <attribute name="birthday" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <relationship name="address" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Address" inverseName="contact" inverseEntity="Address"/>
+        <relationship name="job" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Job" inverseName="contact" inverseEntity="Job"/>
+    </entity>
+    <entity name="Job" representedClassName="Job" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String"/>
+        <attribute name="position" optional="YES" attributeType="String"/>
+        <relationship name="address" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Address" inverseName="job" inverseEntity="Address"/>
+        <relationship name="contact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="job" inverseEntity="Contact"/>
+    </entity>
+    <elements>
+        <element name="Address" positionX="-54" positionY="9" width="128" height="118"/>
+        <element name="Contact" positionX="-360" positionY="-36" width="128" height="163"/>
+        <element name="Job" positionX="-661.08203125" positionY="-78.65234375" width="128" height="118"/>
+    </elements>
+</model>

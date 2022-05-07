@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jSB-Y8-z00">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Contacts-->
+        <scene sceneID="f3W-3P-uG0">
+            <objects>
+                <tableViewController storyboardIdentifier="MainView" id="YeT-qT-h5f" customClass="MainView" customModule="ContactsCoreData" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zjj-dS-tov">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ContactCell" rowHeight="100" id="Ncq-VQ-cvB" customClass="ContactCell" customModule="ContactsCoreData" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ncq-VQ-cvB" id="O5g-JO-flS">
+                                    <rect key="frame" x="0.0" y="0.0" width="316" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="ngp-mJ-hIW">
+                                            <rect key="frame" x="16" y="13" width="74" height="74"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="ngp-mJ-hIW" secondAttribute="height" multiplier="1:1" id="8Ec-p9-Tg2"/>
+                                                <constraint firstAttribute="height" constant="74" id="kFf-vr-aKo"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="4pn-cz-Dv6">
+                                            <rect key="frame" x="98" y="40" width="202" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="4pn-cz-Dv6" firstAttribute="top" secondItem="O5g-JO-flS" secondAttribute="topMargin" constant="29" id="0UP-kX-Cj1"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="4pn-cz-Dv6" secondAttribute="trailing" constant="8" id="25l-qp-3a4"/>
+                                        <constraint firstItem="4pn-cz-Dv6" firstAttribute="leading" secondItem="ngp-mJ-hIW" secondAttribute="trailing" constant="8" symbolic="YES" id="2ZN-ZZ-6vu"/>
+                                        <constraint firstItem="ngp-mJ-hIW" firstAttribute="leading" secondItem="O5g-JO-flS" secondAttribute="leadingMargin" id="Ktc-aQ-Wda"/>
+                                        <constraint firstItem="ngp-mJ-hIW" firstAttribute="centerY" secondItem="O5g-JO-flS" secondAttribute="centerY" id="fSK-k5-zCb"/>
+                                        <constraint firstItem="4pn-cz-Dv6" firstAttribute="centerY" secondItem="O5g-JO-flS" secondAttribute="centerY" id="pay-Pu-cXZ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="contactImage" destination="ngp-mJ-hIW" id="f0K-Cp-Ler"/>
+                                    <outlet property="label" destination="4pn-cz-Dv6" id="djb-az-uob"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="YeT-qT-h5f" id="9YA-eY-quz"/>
+                            <outlet property="delegate" destination="YeT-qT-h5f" id="xS2-QU-lVQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Contacts" leftItemsSupplementBackButton="YES" id="Kbe-nS-V3u">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qWM-2P-aMz">
+                            <connections>
+                                <action selector="addNewButton:" destination="YeT-qT-h5f" id="jk4-IT-MZP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7k9-wO-fkc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1845.5999999999999" y="100.29985007496252"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Nbb-bI-KJz">
+            <objects>
+                <navigationController storyboardIdentifier="RootView" automaticallyAdjustsScrollViewInsets="NO" id="jSB-Y8-z00" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vnz-3h-FRL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YeT-qT-h5f" kind="relationship" relationship="rootViewController" id="LuC-oF-N5m"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="poX-VD-LXl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="906.39999999999998" y="100.29985007496252"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="defaultPhoto" width="256" height="256"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
