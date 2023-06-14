@@ -17,7 +17,7 @@ final class DetailViewRouter {
 extension DetailViewRouter: DetailViewRouterProtocol {
     
     public func openEditView() {
-        let title = NSLocalizedString("New_Contact_title", comment: "")
+        let title = NSLocalizedString("Edit_Contact_title", comment: "")
         let storyboard = UIStoryboard(name: "AddEditView", bundle: nil)
         guard let view = storyboard.instantiateViewController(identifier: "AddEditView") as? AddEditView else { return }
         
